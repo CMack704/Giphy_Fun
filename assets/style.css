@@ -6,4 +6,15 @@ header {
 }
 .topics-button {
     margin: 5px;
+    background-color: rgb(153,186,221);
+    color: white;
+
+}
+body {
+    background-image: url(./images/prism/prism.png);
+    color: rgb(153,186,221)
+}
+#add-topic {
+    background-color: rgb(153,186,221);
+    color: white;
 }
