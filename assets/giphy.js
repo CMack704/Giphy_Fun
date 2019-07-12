@@ -2,13 +2,13 @@
 var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "soccer", "game of thrones","NASA", "Universe"]
 
 
-//var queryURL = "https:api.giphy.com/v1/gifs/search?q=dog&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
-//     $.ajax({
-//         url: queryURL,
-//          method: "GET"
-//        }).then(function(response){
-//            console.log(response);
-//        });
+var queryURL = "https:api.giphy.com/v1/gifs/search?q=dog&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
+     $.ajax({
+         url: queryURL,
+          method: "GET"
+        }).then(function(response){
+            console.log(response);
+        });
 
 
 
@@ -41,23 +41,27 @@ var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "socc
             var newImage4 = $("<img class='gif'  src='" + stillGiphy[3] + "' data-still='" + stillGiphy[3] + "' data-animated='" + giphy[3] + "' data-state='still'>");
             var newImage5 = $("<img class='gif'  src='" + stillGiphy[4] + "' data-still='" + stillGiphy[4] + "' data-animated='" + giphy[4] + "' data-state='still'>");
 
+            
+
+                     
+
+            var newRating1 = $("<p>" + response.data[0].images.rating + "</p>")
+            var newRating2 = $("<p>" + response.data[1].images.rating + "</p>")
+            var newRating3 = $("<p>" + response.data[2].images.rating + "</p>")
+            var newRating4 = $("<p>" + response.data[3].images.rating + "</p>")
+            var newRating5 = $("<p>" + response.data[4].images.rating + "</p>")
+            
+
             $("#topics").prepend(newImage5);
+            $("#topics").prepend(newRating5);
             $("#topics").prepend(newImage4);
+            $("#topics").prepend(newRating4);
             $("#topics").prepend(newImage3);
+            $("#topics").prepend(newRating3);
             $("#topics").prepend(newImage2);
+            $("#topics").prepend(newRating2);
+            $("#topics").prepend(newRating1);
             $("#topics").prepend(newImage1);
-
-            var newRating1 = $("<p>Rating: " + response.data[0].images.rating + "</p>");
-            var newRating2 = $("<p>Rating: " + response.data[1].images.rating + "</p>");
-            var newRating3 = $("<p>Rating: " + response.data[2].images.rating + "</p>");
-            var newRating4 = $("<p>Rating: " + response.data[3].images.rating + "</p>");
-            var newRating5 = $("<p>Rating: " + response.data[4].images.rating + "</p>");
-
-            $(newImage1).append(newRating1);
-            $(newImage2).append(newRating2);
-            $(newImage3).append(newRating3);
-            $(newImage4).append(newRating4);
-            $(newImage5).append(newRating5);
             
             
             
