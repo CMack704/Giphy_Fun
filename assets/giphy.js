@@ -9,7 +9,7 @@ var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "socc
     function giphyResponse() {
 
         var topic = $(this).attr("topic-data")
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&limit=5"
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
 
         $.ajax({
             url: queryURL,
@@ -35,11 +35,15 @@ var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "socc
             var newImage4 = $("<img class='gif'  src='" + stillGiphy[3] + "' data-still='" + stillGiphy[3] + "' data-animated='" + giphy[3] + "' data-state='still'>");
             var newImage5 = $("<img class='gif'  src='" + stillGiphy[4] + "' data-still='" + stillGiphy[4] + "' data-animated='" + giphy[4] + "' data-state='still'>");
 
-            $("#topics").append(newImage1);
-            $("#topics").append(newImage2);
-            $("#topics").append(newImage3);
-            $("#topics").append(newImage4);
-            $("#topics").append(newImage5);
+            $("#topics").prepend(newImage5);
+            $("#topics").prepend(newImage4);
+            $("#topics").prepend(newImage3);
+            $("#topics").prepend(newImage2);
+            $("#topics").prepend(newImage1);
+            
+            
+            
+            
 
             $(newImage1).on("click", function(){                
                 var state = $(this).attr("data-state")
