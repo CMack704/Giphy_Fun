@@ -1,15 +1,21 @@
 
 var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "soccer", "game of thrones","NASA", "Universe"]
 
-//Api key PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ
 
+//var queryURL = "https:api.giphy.com/v1/gifs/search?q=dog&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
+//     $.ajax({
+//         url: queryURL,
+//          method: "GET"
+//        }).then(function(response){
+//            console.log(response);
+//        });
 
 
 
     function giphyResponse() {
 
         var topic = $(this).attr("topic-data")
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
+        var queryURL = "https:api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
 
         $.ajax({
             url: queryURL,
@@ -40,6 +46,18 @@ var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "socc
             $("#topics").prepend(newImage3);
             $("#topics").prepend(newImage2);
             $("#topics").prepend(newImage1);
+
+            var newRating1 = $("<p>Rating: " + response.data[0].images.rating + "</p>");
+            var newRating2 = $("<p>Rating: " + response.data[1].images.rating + "</p>");
+            var newRating3 = $("<p>Rating: " + response.data[2].images.rating + "</p>");
+            var newRating4 = $("<p>Rating: " + response.data[3].images.rating + "</p>");
+            var newRating5 = $("<p>Rating: " + response.data[4].images.rating + "</p>");
+
+            $(newImage1).append(newRating1);
+            $(newImage2).append(newRating2);
+            $(newImage3).append(newRating3);
+            $(newImage4).append(newRating4);
+            $(newImage5).append(newRating5);
             
             
             
@@ -109,7 +127,7 @@ var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "socc
             button.attr("data-state");
             button.attr("data-animate");
             button.attr("data-still");
-            button.text(topics[i]);
+            button.text(topics[i]);            
             $("#topicsButton").append(button);
         };
     };
