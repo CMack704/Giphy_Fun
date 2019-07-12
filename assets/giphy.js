@@ -15,7 +15,7 @@ var topics = ["dogs", "gaming", "basketball", "football", "rocket league", "socc
     function giphyResponse() {
 
         var topic = $(this).attr("topic-data")
-        var queryURL = "https:api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=PkzLNR7ZPXGvM0fBXS0c8tDme5snUNQZ&rating=pg&limit=5"
 
         $.ajax({
             url: queryURL,
